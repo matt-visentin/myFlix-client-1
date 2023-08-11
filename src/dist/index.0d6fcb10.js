@@ -27174,46 +27174,26 @@ var _movieView = require("../movie-view/movie-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "Marriage Story",
-            description: "Noah Baumbach's incisive and compassionate look at a marriage breaking up and a family staying together.",
-            genre: "Drama",
-            image: "https://assets.scriptslug.com/live/img/posters/marriage-story-2019.jpg",
-            director: "Noah Baumbach"
-        },
-        {
-            id: 2,
-            title: "Memento",
-            description: "A man with short-term memory loss attempts to track down his wife's murderer.",
-            genre: "Thriller",
-            image: "https://images.squarespace-cdn.com/content/v1/58acc880e4fcb5dd237922fc/1551358270358-Z6FPC1OVBAWHVT0GKCA8/image-asset.jpeg",
-            director: "Christopher Nolan"
-        },
-        {
-            id: 3,
-            title: "The Hand of God",
-            description: "In 1980s Naples, young Fabietto pursues his love for football as family tragedy strikes, shaping his uncertain but promising future as a filmmaker.",
-            genre: "Drama",
-            image: "https://mr.comingsoon.it/imgdb/locandine/big/58940.jpg",
-            director: "Paolo Sorrentino"
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetch("https://m-flix-816a8a9c4a76.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
+            console.log("Movies from API: ", data);
+        });
+    }, []);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 40,
+        lineNumber: 20,
         columnNumber: 9
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 48,
+        lineNumber: 28,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27224,16 +27204,16 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 53,
+                lineNumber: 33,
                 columnNumber: 17
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 51,
+        lineNumber: 31,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "LXaw/efLBBu6Jdm5o04z/fijcWA=");
+_s(MainView, "llzgrUkvR/+OoCNfiqlA1H2LLFI=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
