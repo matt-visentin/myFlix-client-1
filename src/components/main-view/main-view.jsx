@@ -11,7 +11,6 @@ export const MainView = () => {
         .then((data) => {
             const moviesFromApi = data.map((movie) => {
                 return {
-                    image: movie.ImagePath,
                     id: movie._id,
                     title: movie.Title,
                     image: movie.ImagePath,

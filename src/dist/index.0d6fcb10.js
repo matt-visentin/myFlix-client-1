@@ -27179,7 +27179,6 @@ const MainView = ()=>{
         fetch("https://m-flix-816a8a9c4a76.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
             const moviesFromApi = data.map((movie)=>{
                 return {
-                    image: movie.ImagePath,
                     id: movie._id,
                     title: movie.Title,
                     image: movie.ImagePath,
@@ -27205,14 +27204,14 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 39,
+        lineNumber: 38,
         columnNumber: 9
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 47,
+        lineNumber: 46,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27223,12 +27222,12 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 52,
+                lineNumber: 51,
                 columnNumber: 17
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 50,
+        lineNumber: 49,
         columnNumber: 9
     }, undefined);
 };
@@ -27275,7 +27274,7 @@ MovieCard.propTypes = {
             Name: (0, _propTypesDefault.default).string.isRequired,
             Description: (0, _propTypesDefault.default).string.isRequired
         }),
-        director: (0, _propTypesDefault.default).shape({
+        Director: (0, _propTypesDefault.default).shape({
             Name: (0, _propTypesDefault.default).string.isRequired,
             Bio: (0, _propTypesDefault.default).string.isRequired,
             Birthyear: (0, _propTypesDefault.default).number
