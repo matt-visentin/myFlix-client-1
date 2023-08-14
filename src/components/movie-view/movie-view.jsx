@@ -5,23 +5,23 @@ export const MovieView = ({ movie, onBackClick }) => {
     return (
         <div>
             <div>
-            <img src={movie.image} alt="Movie Cover" />
+            <img src={movie.ImagePath} alt="Movie Cover" />
             </div>
             <div>
                 <span>Title: </span>
-                <span>{movie.title}</span>
+                <span>{movie.Title}</span>
             </div>
             <div>
                 <span>Director: </span>
-                <span>{movie.director.name}</span>
+                <span>{movie.Director.Name}</span>
             </div>
             <div>
                 <span>Genre: </span>
-                <span>{movie.genre.name}</span>
+                <span>{movie.Genre.Name}</span>
             </div>
             <div>
                 <span>Description: </span>
-                <span>{movie.description}</span>
+                <span>{movie.Description}</span>
             </div>
             <div>
                 <button onClick={onBackClick}>Back</button>
@@ -40,10 +40,10 @@ MovieView.propTypes = {
         Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Bio: PropTypes.string.isRequired,
-            Birth: PropTypes.number
+            Birth: PropTypes.string
         }),
         Description: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string
+        ImagePath: PropTypes.string.isRequired
     }).isRequired,
     onBackClick: PropTypes.func.isRequired
 };
