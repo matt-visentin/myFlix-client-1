@@ -27282,7 +27282,7 @@ MovieCard.propTypes = {
         Description: (0, _propTypesDefault.default).string.isRequired,
         ImagePath: (0, _propTypesDefault.default).string
     }).isRequired,
-    onBackClick: (0, _propTypesDefault.default).func.isRequired
+    onMoiveClick: (0, _propTypesDefault.default).func.isRequired
 };
 var _c;
 $RefreshReg$(_c, "MovieCard");
