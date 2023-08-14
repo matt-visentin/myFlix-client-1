@@ -5,7 +5,7 @@ export const MovieView = ({ movie, onBackClick }) => {
     return (
         <div>
             <div>
-            <img src={movie.imagePath} alt="Movie Cover" />
+            <img src={movie.image} alt="Movie Cover" />
             </div>
             <div>
                 <span>Title: </span>
@@ -32,18 +32,18 @@ export const MovieView = ({ movie, onBackClick }) => {
 
 MovieView.propTypes = {
     movie: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        genre: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            description: PropTypes.string.isRequired,
+        Title: PropTypes.string.isRequired,
+        Genre: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Description: PropTypes.string.isRequired,
         }),
-        director: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            bio: PropTypes.string.isRequired,
-            birthyear: PropTypes.number
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+            Birth: PropTypes.number
         }),
-        description: PropTypes.string.isRequired,
-        imagePath: PropTypes.string
+        Description: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string
     }).isRequired,
     onBackClick: PropTypes.func.isRequired
 };
