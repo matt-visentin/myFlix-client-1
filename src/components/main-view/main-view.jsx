@@ -70,12 +70,12 @@ export const MainView = () => {
                             ))}
                         </>
                     )}
-                                    <Button
+                    <Button
                     variant="primary"
                     onClick={() => {
                         setUser(null);
                         setToken(null);
-                        localStorage.removeItem(key);
+                        localStorage.removeItem(user, token);
                     }}>
                         Logout
                 </Button>

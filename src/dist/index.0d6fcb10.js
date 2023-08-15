@@ -27294,13 +27294,13 @@ const MainView = ()=>{
                 onClick: ()=>{
                     setUser(null);
                     setToken(null);
-                    localStorage.removeItem(key);
+                    localStorage.removeItem(user, token);
                 },
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 73,
-                columnNumber: 37
+                columnNumber: 21
             }, undefined)
         ]
     }, void 0, true, {
