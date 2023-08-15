@@ -1,63 +1,86 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
+import { SignupView } from "../signup-view/signup-view";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button"
+import Col from "react-bootstrap/Col"
+
+
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-        {
-            id: 1,
-            title: "Marriage Story",
-            description: "Noah Baumbach's incisive and compassionate look at a marriage breaking up and a family staying together.",
-            genre: "Drama",
-            image:
-              "https://assets.scriptslug.com/live/img/posters/marriage-story-2019.jpg",
-            director: "Noah Baumbach"
-        },
-        {
-            id: 2,
-            title: "Memento",
-            description: "A man with short-term memory loss attempts to track down his wife's murderer.",
-            genre: "Thriller",
-            image:
-              "https://images.squarespace-cdn.com/content/v1/58acc880e4fcb5dd237922fc/1551358270358-Z6FPC1OVBAWHVT0GKCA8/image-asset.jpeg",
-            director: "Christopher Nolan"
-        },
-        {
-            id: 3,
-            title: "The Hand of God",
-            description: "In 1980s Naples, young Fabietto pursues his love for football as family tragedy strikes, shaping his uncertain but promising future as a filmmaker.",
-            genre: "Drama",
-            image:
-              "https://mr.comingsoon.it/imgdb/locandine/big/58940.jpg",
-            director: "Paolo Sorrentino"
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
+  const [user, setUser] = useState(storedUser? storedUser : null);
+  const [token, setToken] = useState(storedToken? storedToken : null);
+  const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+    useEffect(() => {
+        if (!token) {
+            return;
         }
-    ]);
+        fetch("https://m-flix-816a8a9c4a76.herokuapp.com/movies", {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            const moviesFromApi = data.map((movie) => movie);
+            setMovies(moviesFromApi);
+        });
+    }, [token]);
+    
+        return (
 
-    const [selectedMovie, setSelectedMovie] = useState(null);
+                <Row className="justify-content-md-center">
+                    {!user ? (
+                        <>
+                            <Col md={5}>
+                                <LoginView onLoggedIn={(user, token) => {
+                                    setUser(user);
+                                    setToken(token);
+                                    }}
+                                />
+                                or
+                                <SignupView />
+                            </Col>
+                        </>
+                    ) : selectedMovie ? (
+                        <Col md={8}>
+                            <MovieView 
+                                movie={selectedMovie} 
+                                onBackClick={() => setSelectedMovie(null)} 
+                            />
+                        </Col>
+                    ) : movies.length === 0 ? (
+                        <div>The list is empty!</div>
+                    ) : (
+                        <>
+                            {movies.map((movie) => (
+                                <Col key={movie._id} md={3}>
+                                    <MovieCard
+                                        movie={movie}
+                                        onMovieClick={(newSelectedMovie) => {
+                                            setSelectedMovie(newSelectedMovie);
+                                        }}
+                                    />
+                                </Col>
+                            ))}
+                        </>
+                    )}
+                    <Button
+                    variant="primary"
+                    onClick={() => {
+                        setUser(null);
+                        setToken(null);
+                        localStorage.removeItem(user, token);
+                    }}>
+                        Logout
+                </Button>
+                </Row>
 
-    if (selectedMovie) {
-      return (
-        <MovieView
-            movie={selectedMovie}
-            onBackClick={() => setSelectedMovie(null)}
-        />
-      );
-    }
 
-    if (movies.length === 0) {
-        return <div>The list is empty</div>;
-    }
-    return (
-        <div>
-            {movies.map((movie) => (
-                <MovieCard
-                    key={movie.id}
-                    movie={movie}
-                    onMovieClick={(newSelectedMovie) => {
-                        setSelectedMovie(newSelectedMovie);
-                    }}
-                />
-            ))}
-        </div>
-    );
- };
+        );
+};
