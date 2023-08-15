@@ -27263,7 +27263,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY","../login-view/login-view":"9YtA0"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28418,8 +28418,8 @@ const LoginView = ({ onLoggedIn })=>{
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            access: username,
-            secret: password
+            Username: username,
+            Password: password
         };
         fetch("https://m-flix-816a8a9c4a76.herokuapp.com/login", {
             method: "POST",
@@ -28501,6 +28501,6 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY","react":"21dqq"}],"lJZlQ":[function() {},{}]},["dWr3j","9adsa","d8Dch"], "d8Dch", "parcelRequirecf2a")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY"}],"lJZlQ":[function() {},{}]},["dWr3j","9adsa","d8Dch"], "d8Dch", "parcelRequirecf2a")
 
 //# sourceMappingURL=index.0d6fcb10.js.map
