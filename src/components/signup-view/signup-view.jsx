@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card, CardGroup } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -33,6 +34,8 @@ export const SignupView = () => {
     };
 
     return (
+      <Card className="mt-3" style={{border: "1px solid green"}}>
+        <Card.Title>Registration</Card.Title>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formUsername">
             <Form.Label>Username:</Form.Label>
@@ -71,7 +74,14 @@ export const SignupView = () => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit">Submit</Button>
+          <Button
+            variant="primary"
+            type="submit"
+            className="mt-2"
+          >
+            Submit
+          </Button>
         </Form>
+      </Card>
     );
 };
