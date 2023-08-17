@@ -27277,7 +27277,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY","../signup-view/signup-view":"4OGiN"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28663,6 +28663,6 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY","react":"21dqq"}],"lJZlQ":[function() {},{}]},["dWr3j","9adsa","d8Dch"], "d8Dch", "parcelRequirecf2a")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"7TxYP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e9KTY"}],"lJZlQ":[function() {},{}]},["dWr3j","9adsa","d8Dch"], "d8Dch", "parcelRequirecf2a")
 
 //# sourceMappingURL=index.0d6fcb10.js.map
