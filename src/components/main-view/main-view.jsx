@@ -75,15 +75,17 @@ export const MainView = () => {
                             ))}
                         </>
                     )}
-                    <Button
-                    variant="primary"
-                    onClick={() => {
-                        setUser(null);
-                        setToken(null);
-                        localStorage.removeItem(user, token);
-                    }}>
-                        Logout
-                    </Button>
+                    {( user &&
+                        <Button
+                        variant="primary"
+                        onClick={() => {
+                            setUser(null);
+                            setToken(null);
+                            localStorage.removeItem(user, token);
+                        }}>
+                            Logout
+                        </Button>
+                    )}
                 </Row>
             </Container>
         );
