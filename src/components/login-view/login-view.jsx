@@ -37,11 +37,10 @@ export const LoginView = ({ onLoggedIn }) => {
     };
 
     return (
-
             <Card className="mt-3" style={{border: "1px solid green"}}>
                 
                 <Card.Title>Login</Card.Title>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group
                             controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
@@ -69,8 +68,8 @@ export const LoginView = ({ onLoggedIn }) => {
                             className="mt-2"
                             variant="primary"
                             type="submit"
-                            onSubmit={handleSubmit}>
-                                Submit
+                            >
+                            Submit
                         </Button>
                         </Form.Group>
                     </Form>

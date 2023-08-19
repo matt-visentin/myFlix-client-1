@@ -81,7 +81,8 @@ export const MainView = () => {
                         onClick={() => {
                             setUser(null);
                             setToken(null);
-                            localStorage.removeItem(user, token);
+                            localStorage.removeItem("user");
+                            localStorage.removeItem("token");
                         }}>
                             Logout
                         </Button>
