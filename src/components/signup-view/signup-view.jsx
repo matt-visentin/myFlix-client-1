@@ -34,10 +34,12 @@ export const SignupView = () => {
     };
 
     return (
-      <Card className="mt-3" style={{border: "1px solid green"}}>
-        <Card.Title>Registration</Card.Title>
+      <Card className="mt-3 p-3">
+        <Card.Title className="text-center">Registration</Card.Title>
         <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formUsername">
+          <Form.Group
+            controlId="formUsername"
+            className="mt-3">
             <Form.Label>Username:</Form.Label>
             <Form.Control
               type="text"
@@ -47,7 +49,9 @@ export const SignupView = () => {
               minLength="5"
             />
           </Form.Group>
-          <Form.Group controlId="formPassword">
+          <Form.Group 
+            controlId="formPassword"
+            className="mt-2">
             <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
@@ -56,7 +60,9 @@ export const SignupView = () => {
               required
             />
           </Form.Group>
-          <Form.Group controlId="formEmail">
+          <Form.Group
+            className="mt-2"
+            controlId="formEmail">
             <Form.Label>Email:</Form.Label>
             <Form.Control
               type="email"
@@ -65,7 +71,9 @@ export const SignupView = () => {
               required
             />
           </Form.Group>
-          <Form.Group controlId="formBirthday">
+          <Form.Group
+            controlId="formBirthday"
+            className="mt-2">
             <Form.Label>Birthday:</Form.Label>
             <Form.Control
               type="date"

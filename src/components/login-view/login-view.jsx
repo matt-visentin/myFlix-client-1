@@ -36,11 +36,12 @@ export const LoginView = ({ onLoggedIn }) => {
     };
 
     return (
-            <Card className="mt-3" style={{border: "1px solid green"}}>
-                
-                <Card.Title>Login</Card.Title>
-                    <Form onSubmit={handleSubmit}>
+            <Card className="mt-3 p-3"> 
+                <Card.Title className="text-center">Login</Card.Title>
+                    <Form onSubmit={handleSubmit}
+                    >
                         <Form.Group
+                            className="mt-3"
                             controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control
@@ -52,7 +53,9 @@ export const LoginView = ({ onLoggedIn }) => {
                                 placeholder="Enter your username"
                             />
                         </Form.Group>
-                        <Form.Group controlId="formPassword">
+                        <Form.Group
+                            controlId="formPassword"
+                            className="mt-2">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control
                                 type="password"

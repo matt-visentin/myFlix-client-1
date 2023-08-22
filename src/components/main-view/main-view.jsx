@@ -29,8 +29,8 @@ export const MainView = () => {
     }, [token]);
     
         return (
-            <Container>
-                <Row className="justify-content-md-center" style={{border: "1px solid black"}}>
+            <Container className="bg-primary">
+                <Row className="justify-content-md-center pb-3 bg-primary">
                     {!user ? (
                         <>
                         <Row>
@@ -53,7 +53,7 @@ export const MainView = () => {
                         </Row>
                         </>
                     ) : selectedMovie ? (
-                        <Col  md={8} lg={6} xl={5} xxl={4}>
+                        <Col md={8} lg={6} xl={5} xxl={4}>
                             <MovieView 
                                 movie={selectedMovie} 
                                 onBackClick={() => setSelectedMovie(null)} 
