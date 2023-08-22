@@ -7,13 +7,13 @@ import { Row, Col, Button, Card, CardGroup, Container } from "react-bootstrap";
 import "./main-view.scss";
 
 export const MainView = () => {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+    const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
-
+    
     useEffect(() => {
         if (!token) {
             return;
@@ -33,6 +33,7 @@ export const MainView = () => {
                 <Row className="justify-content-md-center" style={{border: "1px solid black"}}>
                     {!user ? (
                         <>
+                        <Row>
                             <Col></Col>
                             <Col xs={10} md={8} lg={6} xxl={5}>
                                 <LoginView onLoggedIn={(user, token) => {
@@ -42,12 +43,14 @@ export const MainView = () => {
                                 />
                             </Col>
                             <Col></Col>
-                            or
+                        </Row>
+                        <Row>
                             <Col></Col>
                             <Col xs={10} md={8} lg={6} xxl={5}>
                                 <SignupView />
                             </Col>
                             <Col></Col>
+                        </Row>
                         </>
                     ) : selectedMovie ? (
                         <Col  md={8} lg={6} xl={5} xxl={4}>

@@ -74,6 +74,7 @@ export const SignupView = () => {
               required
             />
           </Form.Group>
+          <Form.Group className="d-flex justify-content-center">
           <Button
             variant="primary"
             type="submit"
@@ -81,6 +82,7 @@ export const SignupView = () => {
           >
             Submit
           </Button>
+          </Form.Group>
         </Form>
       </Card>
     );

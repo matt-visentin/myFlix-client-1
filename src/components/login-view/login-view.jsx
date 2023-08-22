@@ -9,7 +9,6 @@ export const LoginView = ({ onLoggedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
         const data = {
             Username: username,
             Password: password
@@ -63,7 +62,7 @@ export const LoginView = ({ onLoggedIn }) => {
                                 placeholder="Password"
                             />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className="d-flex justify-content-center">
                         <Button
                             className="mt-2"
                             variant="primary"
