@@ -1,40 +1,41 @@
+import React from "react";
 import PropTypes from "prop-types";
 import { Row, Card, Col, Container, Card, CardGroup } from "react-bootstrap";
-
+import { Link, useParams } from "react-router-dom";
 import "./movie-view.scss";
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies }) => {
+    const { _id } = useParams();
+    const movie = movies.find((m) => m._id === _id)
     console.log(movie);
     return (
-
-                    <CardGroup>
-                        <Card>
-                            <Card.Title>{movie.Title}</Card.Title>
-                            <Card.Body>
-                            <div>
-                                <div>
-                                <img src={movie.ImagePath} className="mw-100" alt="Movie Cover" />
-                                </div>
-                                <div>
-                                    <span>Director: </span>
-                                    <span>{movie.Director.Name}</span>
-                                </div>
-                                <div>
-                                    <span>Genre: </span>
-                                    <span>{movie.Genre.Name}</span>
-                                </div>
-                                <div>
-                                    <span>Description: </span>
-                                    <span>{movie.Description}</span>
-                                </div>
-                                <div>
-                                    <button onClick={onBackClick}>Back</button>
-                                </div>
-                            </div>
-                            </Card.Body>
-                        </Card>
-                    </CardGroup>
-
+        <CardGroup>
+            <Card>
+                <Card.Title>{movie.Title}</Card.Title>
+                <Card.Body>
+                <div>
+                    <div>
+                    <img src={movie.ImagePath} className="mw-100" alt="Movie Cover" />
+                    </div>
+                    <div>
+                        <span>Director: </span>
+                        <span>{movie.Director.Name}</span>
+                    </div>
+                    <div>
+                        <span>Genre: </span>
+                        <span>{movie.Genre.Name}</span>
+                    </div>
+                    <div>
+                        <span>Description: </span>
+                        <span>{movie.Description}</span>
+                    </div>
+                    <Link to={`/`}>
+                        <button className="back-button">Back</button>
+                    </Link>
+                </div>
+                </Card.Body>
+            </Card>
+        </CardGroup>
     );
 };
 
