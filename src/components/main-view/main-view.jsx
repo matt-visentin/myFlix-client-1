@@ -4,6 +4,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { Row, Col, Button, Card, CardGroup, Container, Nav } from "react-bootstrap";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./main-view.scss";
@@ -31,6 +32,15 @@ export const MainView = () => {
     
     return (
         <BrowserRouter>
+            <NavigationBar
+                user={user}
+                onLoggedOut={() => {
+                    setUser(null);
+                    setToken(null);
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("token");
+                }}
+            />
             <Container className="bg-primary">
                 <Row className="justify-content-md-center pb-3 bg-primary">
                     <Routes>
